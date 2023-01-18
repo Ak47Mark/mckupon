@@ -1,0 +1,26 @@
+{
+  "name": "McKupon",
+  "description": "McDonald kupon beolvasó rendszer",
+  "version": "1",
+  "manifest_version": 3,
+  "author": "Varga Márk",
+  "permissions": ["declarativeContent", "storage"],
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'"
+  },
+  "action":{
+    "default_popup": "/pages/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mcdonalds.fast-insight.com/*"],
+      "js": ["/js/jquery-3.4.1.min.js", "/js/script.js"]
+    }
+  ],
+  "options_page": "/pages/options.html",
+  "icons": {
+    "16": "/images/mcdonald_logo_16x16.png",
+    "32": "/images/mcdonald_logo_32x32.png",
+    "64": "/images/mcdonald_logo_64x64.png"
+  }
+}
